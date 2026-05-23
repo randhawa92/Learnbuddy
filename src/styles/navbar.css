@@ -1,0 +1,352 @@
+.navbar{
+  width: 100%;
+  background: white;
+
+  padding: 18px 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  transition: 0.3s;
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+  color: #2563eb;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-links{
+  display: flex;
+  align-items: center;
+
+  gap: 35px;
+
+  list-style: none;
+}
+
+.nav-links a{
+
+  text-decoration: none;
+
+  color: #0f172a;
+
+  font-weight: 500;
+
+  transition: 0.3s;
+
+  position: relative;
+
+  font-size: 16px;
+}
+
+/* ================= NAV BUTTON ================= */
+
+.nav-btn{
+
+  background: transparent;
+
+  border: none;
+
+  color: #0f172a;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition: 0.3s;
+
+  font-size: 16px;
+}
+
+/* SAME HOVER EFFECT */
+
+.nav-links a:hover,
+.nav-btn:hover{
+
+  color: #2563eb;
+}
+
+/* UNDERLINE EFFECT */
+
+.nav-links a::after,
+.nav-btn::after{
+
+  content: "";
+
+  position: absolute;
+
+  width: 0;
+  height: 2px;
+
+  background: #2563eb;
+
+  left: 0;
+  bottom: -5px;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-btn:hover::after{
+
+  width: 100%;
+}
+
+/* ================= RIGHT SECTION ================= */
+
+.right-section{
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+/* ================= THEME BUTTON ================= */
+
+.theme-btn{
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: 0.3s;
+}
+
+.theme-btn:hover{
+
+  background: #dbeafe;
+
+  transform: rotate(15deg);
+}
+
+/* ================= DROPDOWN ================= */
+
+.dropdown{
+  position: relative;
+}
+
+/* ================= USER BUTTON ================= */
+
+.user-btn{
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  padding: 10px 18px;
+
+  border: 1px solid #bfdbfe;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.user-btn svg{
+
+  font-size: 18px;
+}
+
+.user-btn:hover{
+
+  background: #dbeafe;
+
+}
+
+/* ================= DROPDOWN MENU ================= */
+
+.dropdown-menu{
+
+  position: absolute;
+
+  top: 55px;
+  right: 0;
+
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 10px;
+
+  min-width: 150px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+  animation: dropdownFade 0.3s ease;
+
+  z-index: 100;
+}
+
+/* ================= DROPDOWN ANIMATION ================= */
+
+@keyframes dropdownFade{
+
+  from{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* ================= LOGOUT BUTTON ================= */
+
+.logout-btn{
+
+  width: 100%;
+
+  padding: 10px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #ef4444;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.logout-btn:hover{
+
+  background: #dc2626;
+
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark .navbar{
+
+  background: #1e293b;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+body.dark .logo{
+
+  color: #60a5fa;
+}
+
+body.dark .nav-links a,
+body.dark .nav-btn{
+
+  color: white;
+}
+
+body.dark .user-btn{
+
+  background: #334155;
+
+  color: #f8fafc;
+
+  border: 1px solid #475569;
+}
+
+body.dark .user-btn:hover{
+
+  background: #475569;
+}
+
+body.dark .theme-btn{
+
+  background: #334155;
+
+  color: #facc15;
+}
+
+body.dark .theme-btn:hover{
+
+  background: #475569;
+}
+
+body.dark .dropdown-menu{
+
+  background: #1e293b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+  .navbar{
+
+    padding: 18px 25px;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .nav-links{
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 20px;
+  }
+
+  .logo{
+
+    font-size: 24px;
+  }
+
+  .user-btn{
+
+    font-size: 13px;
+  }
+
+}
